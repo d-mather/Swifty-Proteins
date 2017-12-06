@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="42-background" translatesAutoresizingMaskIntoConstraints="NO" id="00g-Do-3zS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snb-Bh-LRJ">
+                                <rect key="frame" x="134" y="283" width="107" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ci1-Jx-Njx"/>
+                                    <constraint firstAttribute="width" constant="107" id="wMC-Oe-hLy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="77"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="00g-Do-3zS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="2Ln-Ie-MoQ"/>
+                            <constraint firstItem="00g-Do-3zS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4kq-qv-hFz"/>
+                            <constraint firstItem="snb-Bh-LRJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5DZ-um-PLt"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="00g-Do-3zS" secondAttribute="bottom" id="h7P-p1-x7R"/>
+                            <constraint firstItem="00g-Do-3zS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="o1K-dM-GiV"/>
+                            <constraint firstAttribute="trailing" secondItem="00g-Do-3zS" secondAttribute="trailing" id="rlj-Ng-Npq"/>
+                            <constraint firstItem="snb-Bh-LRJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="uOo-6X-TKz"/>
+                            <constraint firstItem="00g-Do-3zS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ucj-A0-aI1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="42-background" width="1000" height="650"/>
+    </resources>
+</document>

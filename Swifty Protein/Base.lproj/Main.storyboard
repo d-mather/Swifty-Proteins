@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QlQ-Td-Dsg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Swifty Protein-->
+        <scene sceneID="4b9-ON-OBL">
+            <objects>
+                <viewController id="nTH-Ow-fdz" customClass="ViewController" customModule="Swifty_Protein" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ftt-P9-7D7"/>
+                        <viewControllerLayoutGuide type="bottom" id="gkF-Et-E4R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TxZ-WV-QGz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="42-background" translatesAutoresizingMaskIntoConstraints="NO" id="wKc-ca-5Gx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMN-PO-ZTH">
+                                <rect key="frame" x="166" y="318" width="43" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Touch"/>
+                                <connections>
+                                    <action selector="TouchID:" destination="nTH-Ow-fdz" eventType="touchUpInside" id="mW0-mV-LtP"/>
+                                    <segue destination="vSE-TU-Xpk" kind="show" id="NAm-Qr-h01"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wKc-ca-5Gx" firstAttribute="top" secondItem="TxZ-WV-QGz" secondAttribute="top" id="DQN-5u-c7d"/>
+                            <constraint firstItem="wKc-ca-5Gx" firstAttribute="centerY" secondItem="TxZ-WV-QGz" secondAttribute="centerY" id="Ryd-QD-UNp"/>
+                            <constraint firstItem="wKc-ca-5Gx" firstAttribute="centerX" secondItem="TxZ-WV-QGz" secondAttribute="centerX" id="TYx-Eo-VBR"/>
+                            <constraint firstAttribute="trailing" secondItem="wKc-ca-5Gx" secondAttribute="trailing" id="e8q-rx-49a"/>
+                            <constraint firstItem="gkF-Et-E4R" firstAttribute="top" secondItem="wKc-ca-5Gx" secondAttribute="bottom" id="nDU-WL-mj2"/>
+                            <constraint firstItem="wKc-ca-5Gx" firstAttribute="leading" secondItem="TxZ-WV-QGz" secondAttribute="leading" id="uta-77-XaO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Swifty Protein" id="6yx-gZ-nnh"/>
+                    <connections>
+                        <outlet property="TouchIDButton" destination="uMN-PO-ZTH" id="cbD-GU-9I2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYd-lj-yuH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-397.60000000000002" y="158.77061469265368"/>
+        </scene>
+        <!--Search Swifty Protein-->
+        <scene sceneID="vn2-MF-4W2">
+            <objects>
+                <viewController id="vSE-TU-Xpk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v3H-1q-iI8"/>
+                        <viewControllerLayoutGuide type="bottom" id="GwX-il-JuD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e7q-a6-qaU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search Swifty Protein" id="cDp-tn-gW6">
+                        <barButtonItem key="backBarButtonItem" title="&lt;" id="uex-3t-zq8"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nKM-xt-RkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415" y="160"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Di-g7-PQq">
+            <objects>
+                <navigationController id="QlQ-Td-Dsg" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="7RK-ba-UPh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nTH-Ow-fdz" kind="relationship" relationship="rootViewController" id="eNz-1Y-yan"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Csn-Ii-eJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1209" y="160"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="42-background" width="1000" height="650"/>
+    </resources>
+</document>
