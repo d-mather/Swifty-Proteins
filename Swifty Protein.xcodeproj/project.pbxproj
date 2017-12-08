@@ -12,6 +12,10 @@
 		378594971FD6BD6D002F4798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 378594951FD6BD6D002F4798 /* Main.storyboard */; };
 		378594991FD6BD6D002F4798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 378594981FD6BD6D002F4798 /* Assets.xcassets */; };
 		3785949C1FD6BD6D002F4798 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3785949A1FD6BD6D002F4798 /* LaunchScreen.storyboard */; };
+		379694F31FDA836C0057D6C5 /* ProteinsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379694F21FDA836C0057D6C5 /* ProteinsTableViewCell.swift */; };
+		379694F51FDAAAC50057D6C5 /* DisplayProtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379694F41FDAAAC50057D6C5 /* DisplayProtein.swift */; };
+		37A2DA401FD9579A00083066 /* ProteinsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2DA3F1FD9579A00083066 /* ProteinsListViewController.swift */; };
+		37A2DA441FD9A4AE00083066 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37A2DA431FD9A4AE00083066 /* ligands.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		378594981FD6BD6D002F4798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3785949B1FD6BD6D002F4798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3785949D1FD6BD6D002F4798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		379694F21FDA836C0057D6C5 /* ProteinsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinsTableViewCell.swift; sourceTree = "<group>"; };
+		379694F41FDAAAC50057D6C5 /* DisplayProtein.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayProtein.swift; sourceTree = "<group>"; };
+		37A2DA3F1FD9579A00083066 /* ProteinsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinsListViewController.swift; sourceTree = "<group>"; };
+		37A2DA431FD9A4AE00083066 /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +62,12 @@
 		378594901FD6BD6D002F4798 /* Swifty Protein */ = {
 			isa = PBXGroup;
 			children = (
+				37A2DA431FD9A4AE00083066 /* ligands.txt */,
+				379694F41FDAAAC50057D6C5 /* DisplayProtein.swift */,
 				378594911FD6BD6D002F4798 /* AppDelegate.swift */,
 				378594931FD6BD6D002F4798 /* ViewController.swift */,
+				379694F21FDA836C0057D6C5 /* ProteinsTableViewCell.swift */,
+				37A2DA3F1FD9579A00083066 /* ProteinsListViewController.swift */,
 				378594951FD6BD6D002F4798 /* Main.storyboard */,
 				378594981FD6BD6D002F4798 /* Assets.xcassets */,
 				3785949A1FD6BD6D002F4798 /* LaunchScreen.storyboard */,
@@ -124,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3785949C1FD6BD6D002F4798 /* LaunchScreen.storyboard in Resources */,
+				37A2DA441FD9A4AE00083066 /* ligands.txt in Resources */,
 				378594991FD6BD6D002F4798 /* Assets.xcassets in Resources */,
 				378594971FD6BD6D002F4798 /* Main.storyboard in Resources */,
 			);
@@ -136,7 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379694F51FDAAAC50057D6C5 /* DisplayProtein.swift in Sources */,
 				378594941FD6BD6D002F4798 /* ViewController.swift in Sources */,
+				379694F31FDA836C0057D6C5 /* ProteinsTableViewCell.swift in Sources */,
+				37A2DA401FD9579A00083066 /* ProteinsListViewController.swift in Sources */,
 				378594921FD6BD6D002F4798 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +315,7 @@
 				378594A21FD6BD6D002F4798 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
