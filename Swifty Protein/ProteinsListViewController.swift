@@ -50,7 +50,7 @@ class ProteinsListViewController: UIViewController, UITableViewDelegate, UITable
         myIndex = proteinsList.index(of: currentCell.textLabel!.text!)!
         performSegue(withIdentifier: "segue", sender: self)
     }
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
             isSearching = false
