@@ -25,6 +25,11 @@ class ViewController: UIViewController {
             return false
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        UsernameField.text = "";
+        PasswordField.text = "";
+    }
 
     @IBAction func TouchID(_ sender: Any) {
         if self.passTouchID == true {

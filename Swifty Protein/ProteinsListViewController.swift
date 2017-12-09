@@ -8,19 +8,29 @@
 
 import UIKit
 
-class ProteinsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProteinsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var Table: UITableView!
     var proteinsList : [String] = []
+    var filteredData = [String]()
+    var isSearching = false
     var myIndex = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching {
+            return filteredData.count
+        }
         return proteinsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = self.proteinsList[indexPath.row]
+        if isSearching {
+            cell.textLabel?.text = self.filteredData[indexPath.row]
+        } else {
+            cell.textLabel?.text = self.proteinsList[indexPath.row]
+        }
 
         cell.textLabel?.textAlignment = .center
         cell.backgroundColor = UIColor.clear
@@ -35,8 +45,22 @@ class ProteinsListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        myIndex = indexPath.row
+        let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRow(at: indexPath!)! as UITableViewCell
+        myIndex = proteinsList.index(of: currentCell.textLabel!.text!)!
         performSegue(withIdentifier: "segue", sender: self)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            isSearching = false
+            view.endEditing(true)
+            Table.reloadData()
+        } else {
+            isSearching = true
+            filteredData = proteinsList.filter({$0.contains((searchBar.text?.uppercased())!)})
+            Table.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,7 +70,8 @@ class ProteinsListViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.becomeFirstResponder()
+        searchBar.returnKeyType = UIReturnKeyType.done
         let path = Bundle.main.path(forResource: "ligands", ofType: "txt")
         let fileManager = FileManager.default
 

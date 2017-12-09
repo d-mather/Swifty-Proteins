@@ -46,6 +46,7 @@
                                     <constraint firstAttribute="width" constant="122" id="qJd-9p-0nD"/>
                                 </constraints>
                                 <color key="textColor" red="0.69435117410000002" green="0.79985398200000002" blue="1" alpha="0.7995150862068966" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -129,6 +130,9 @@
                             <searchBar contentMode="redraw" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="UWe-l6-tNq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vSE-TU-Xpk" id="EeK-Kr-p9P"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="39" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cuD-4f-gxQ">
                                 <rect key="frame" x="16" y="108" width="343" height="551"/>
@@ -138,7 +142,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="39"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G7e-TZ-kvW" id="3n9-pu-P0g">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptf-2C-6XU">
@@ -188,6 +192,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="Table" destination="cuD-4f-gxQ" id="sXm-jU-lUt"/>
+                        <outlet property="searchBar" destination="UWe-l6-tNq" id="reB-2G-ooC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKM-xt-RkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
