@@ -16,6 +16,8 @@
 		379694F51FDAAAC50057D6C5 /* DisplayProtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379694F41FDAAAC50057D6C5 /* DisplayProtein.swift */; };
 		37A2DA401FD9579A00083066 /* ProteinsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2DA3F1FD9579A00083066 /* ProteinsListViewController.swift */; };
 		37A2DA441FD9A4AE00083066 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37A2DA431FD9A4AE00083066 /* ligands.txt */; };
+		BFB35EAB1FDD66A600920FD8 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB35EAA1FDD66A600920FD8 /* SceneKit.framework */; };
+		BFB35EAD1FDD66E200920FD8 /* PrimitivesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB35EAC1FDD66E200920FD8 /* PrimitivesScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		379694F41FDAAAC50057D6C5 /* DisplayProtein.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayProtein.swift; sourceTree = "<group>"; };
 		37A2DA3F1FD9579A00083066 /* ProteinsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinsListViewController.swift; sourceTree = "<group>"; };
 		37A2DA431FD9A4AE00083066 /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
+		BFB35EAA1FDD66A600920FD8 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
+		BFB35EAC1FDD66E200920FD8 /* PrimitivesScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimitivesScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFB35EAB1FDD66A600920FD8 /* SceneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,7 @@
 			children = (
 				378594901FD6BD6D002F4798 /* Swifty Protein */,
 				3785948F1FD6BD6D002F4798 /* Products */,
+				BFB35EA91FDD66A500920FD8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +71,7 @@
 				37A2DA431FD9A4AE00083066 /* ligands.txt */,
 				379694F41FDAAAC50057D6C5 /* DisplayProtein.swift */,
 				378594911FD6BD6D002F4798 /* AppDelegate.swift */,
+				BFB35EAC1FDD66E200920FD8 /* PrimitivesScene.swift */,
 				378594931FD6BD6D002F4798 /* ViewController.swift */,
 				379694F21FDA836C0057D6C5 /* ProteinsTableViewCell.swift */,
 				37A2DA3F1FD9579A00083066 /* ProteinsListViewController.swift */,
@@ -74,6 +81,14 @@
 				3785949D1FD6BD6D002F4798 /* Info.plist */,
 			);
 			path = "Swifty Protein";
+			sourceTree = "<group>";
+		};
+		BFB35EA91FDD66A500920FD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFB35EAA1FDD66A600920FD8 /* SceneKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +166,7 @@
 			files = (
 				379694F51FDAAAC50057D6C5 /* DisplayProtein.swift in Sources */,
 				378594941FD6BD6D002F4798 /* ViewController.swift in Sources */,
+				BFB35EAD1FDD66E200920FD8 /* PrimitivesScene.swift in Sources */,
 				379694F31FDA836C0057D6C5 /* ProteinsTableViewCell.swift in Sources */,
 				37A2DA401FD9579A00083066 /* ProteinsListViewController.swift in Sources */,
 				378594921FD6BD6D002F4798 /* AppDelegate.swift in Sources */,
