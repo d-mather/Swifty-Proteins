@@ -25,7 +25,7 @@ class ViewController: UIViewController {
             return false
         }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         UsernameField.text = "";
         PasswordField.text = "";
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
                         }
                     } else {
                         self.passTouchID = false
-                        self.createAlert(title: "Error", message: "Invalid TouchID")
+                        self.createAlert(title: "Warning", message: "Authentication Failed.")
                     }
                 })
             }
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
             PasswordField.text = ""
             passTouchID = true
         } else {
-            createAlert(title: "Login Error", message: "Invalid Login Credentials. Try Again.")
+            createAlert(title: "Warning", message: "Authentication Failed.")
             PasswordField.text = ""
             passTouchID = false
         }
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
             self.TouchIDButton.isHidden = false
         } else {
             self.TouchIDButton.isHidden = true
-            createAlert(title: "Compatibility error", message: "Device does not support TouchID")
+            createAlert(title: "Compatibility Error", message: "Device does not support TouchID")
         }
     }
 

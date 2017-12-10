@@ -16,6 +16,8 @@
 	<string>APPL</string>
 	<key>UIApplicationExitsOnSuspend</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>SwiftyProteins photo use</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

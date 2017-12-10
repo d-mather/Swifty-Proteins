@@ -199,7 +199,7 @@
             </objects>
             <point key="canvasLocation" x="413.60000000000002" y="158.77061469265368"/>
         </scene>
-        <!--Display Protein-->
+        <!--Title-->
         <scene sceneID="ljS-t3-I4a">
             <objects>
                 <viewController id="JGe-ta-YAz" customClass="DisplayProtein" customModule="Swifty_Protein" customModuleProvider="target" sceneMemberID="viewController">
@@ -223,10 +223,18 @@
                             <constraint firstAttribute="trailing" secondItem="5eq-hM-ZOU" secondAttribute="trailing" id="tf5-rM-lqG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="Is0-0S-tMw">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="syk-O0-nTd">
+                            <color key="tintColor" red="0.57412876089999998" green="0.57486186289999996" blue="0.88523637820000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="Shared:" destination="JGe-ta-YAz" id="Fbs-1b-CcD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hww-bo-5V6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192.8" y="159.67016491754123"/>
+            <point key="canvasLocation" x="1192.8" y="158.77061469265368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Di-g7-PQq">
