@@ -227,7 +227,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ligand number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaK-WY-aiK">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ligand code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaK-WY-aiK">
                                         <rect key="frame" x="8" y="571" width="359" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="9Bf-oz-vxv"/>
@@ -236,13 +236,25 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tVp-Qm-cLJ">
+                                        <rect key="frame" x="157" y="271" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="W0g-UL-Pts"/>
+                                            <constraint firstAttribute="width" constant="60" id="kOE-Ew-ydV"/>
+                                        </constraints>
+                                        <color key="color" red="0.0" green="0.27892840981547362" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="tVp-Qm-cLJ" firstAttribute="centerX" secondItem="H27-9P-36A" secondAttribute="centerX" id="3ob-eo-4FY"/>
+                                    <constraint firstItem="tVp-Qm-cLJ" firstAttribute="centerX" secondItem="H27-9P-36A" secondAttribute="centerX" id="9Vc-eT-Fft"/>
+                                    <constraint firstItem="tVp-Qm-cLJ" firstAttribute="centerY" secondItem="H27-9P-36A" secondAttribute="centerY" id="Hm1-oW-jL6"/>
                                     <constraint firstAttribute="trailing" secondItem="iaK-WY-aiK" secondAttribute="trailing" constant="8" id="IKx-ac-pfE"/>
                                     <constraint firstItem="UFC-Qc-dco" firstAttribute="leading" secondItem="H27-9P-36A" secondAttribute="leading" constant="8" id="LrM-AF-q8n"/>
                                     <constraint firstAttribute="bottom" secondItem="iaK-WY-aiK" secondAttribute="bottom" constant="8" id="PzX-Zf-q5z"/>
                                     <constraint firstItem="iaK-WY-aiK" firstAttribute="leading" secondItem="H27-9P-36A" secondAttribute="leading" constant="8" id="T8b-im-qWH"/>
+                                    <constraint firstItem="tVp-Qm-cLJ" firstAttribute="centerY" secondItem="H27-9P-36A" secondAttribute="centerY" id="gfi-se-nQb"/>
                                     <constraint firstItem="UFC-Qc-dco" firstAttribute="top" secondItem="H27-9P-36A" secondAttribute="top" constant="8" id="ui6-xj-3Se"/>
                                 </constraints>
                             </view>
@@ -268,6 +280,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="tVp-Qm-cLJ" id="AD1-G5-xwa"/>
                         <outlet property="descriptionLabel" destination="iaK-WY-aiK" id="DUa-yi-wSY"/>
                         <outlet property="elementLabel" destination="UFC-Qc-dco" id="3xe-xg-ZX2"/>
                         <outlet property="proteinView" destination="H27-9P-36A" id="v8v-R7-6eN"/>

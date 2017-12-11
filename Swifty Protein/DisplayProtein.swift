@@ -18,6 +18,7 @@ class DisplayProtein: UIViewController {
     @IBOutlet weak var proteinView: UIView!
     @IBOutlet weak var elementLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,17 +44,27 @@ class DisplayProtein: UIViewController {
         let first = "https://files.rcsb.org/ligands/view/"
         let last = "_ideal.pdb"
         
+        // Show activity indicator
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         let url = URL(string: first + ligand + last)
         let task = URLSession.shared.dataTask(with: url!, completionHandler: {
             (data, response, error) in
             
             if error == nil {
+                
                 if let response = response as? HTTPURLResponse {
                     
                     if response.statusCode >= 200 && response.statusCode <= 299 {
                         
                         DispatchQueue.main.async(execute: { () -> Void in
+                            
+                            // Hide activity indicator
+                            self.activityIndicator.stopAnimating()
+                            self.activityIndicator.isHidden = true
+                            
                             let urlContent = NSString(data: data!, encoding: String.Encoding.ascii.rawValue) as NSString!
                             
                             var sentenceLines:[String] = []
@@ -75,12 +86,16 @@ class DisplayProtein: UIViewController {
                             self.scnView!.autoenablesDefaultLighting = true
                             self.scnView!.allowsCameraControl = true
                             
-                            self.descriptionLabel.text = "Ligand number " + ligand
+                            self.descriptionLabel.text = "Ligand code " + ligand
                         })
                         
                     } else {
                         
                         DispatchQueue.main.async(execute: { () -> Void in
+                            // Hide activity indicator
+                            self.activityIndicator.stopAnimating()
+                            self.activityIndicator.isHidden = true
+                            
                             let alertController = UIAlertController(title: "Error", message: "Can't load Ligand: \(ligand)", preferredStyle: .alert)
                             let defaultAction = UIAlertAction(title: "GOTCHA", style: .default, handler: nil)
                             alertController.addAction(defaultAction)
@@ -94,6 +109,10 @@ class DisplayProtein: UIViewController {
             } else {
                 
                 DispatchQueue.main.async(execute: { () -> Void in
+                    // Hide activity indicator
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.isHidden = true
+                    
                     let alertController = UIAlertController(title: "Error", message: "Can't load Ligand", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "GOTCHA", style: .default, handler: nil)
                     alertController.addAction(defaultAction)
@@ -101,8 +120,13 @@ class DisplayProtein: UIViewController {
                 })
             }
         })
+        
+        // Hide activity indicator
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        
         task.resume()
+        
+        
     }
     
     func didTap(_ tapGR: UITapGestureRecognizer) {
@@ -117,29 +141,9 @@ class DisplayProtein: UIViewController {
     }
     
     @IBAction func Shared(_ sender: UIBarButtonItem) {
-        let activityVC = UIActivityViewController(activityItems: [screenshot()], applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: [scnView.snapshot()], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true, completion: nil)
-    }
-    
-    func screenshot() -> UIImage {
-        let imageSize = UIScreen.main.bounds.size as CGSize;
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
-        let context = UIGraphicsGetCurrentContext()
-        for obj : AnyObject in UIApplication.shared.windows {
-            if let window = obj as? UIWindow {
-                if window.responds(to: #selector(getter: UIWindow.screen)) || window.screen == UIScreen.main {
-                    context!.saveGState();
-                    context!.translateBy(x: window.center.x, y: window.center .y);
-                    context!.concatenate(window.transform);
-                    context!.translateBy(x: -window.bounds.size.width * window.layer.anchorPoint.x, y: -window.bounds.size.height * window.layer.anchorPoint.y);
-                    window.layer.render(in: context!)
-                    context!.restoreGState();
-                }
-            }
-        }
-        let image = UIGraphicsGetImageFromCurrentImageContext();
-        return image!
     }
     
 }
