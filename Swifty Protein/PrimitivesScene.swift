@@ -41,7 +41,8 @@ class PrimitivesScene: SCNScene {
                     let from : Int = Int(fullNameArr[1])!
                     let to = fullNameArr[2..<fullNameArr.count]
                     for elem in to {
-                        let line = self.lineBetweenNodeA(self.atoms[from], nodeB: self.atoms[Int(elem)!])
+                        //let line = self.lineBetweenNodeA(self.atoms[from], nodeB: self.atoms[Int(elem)!])
+                        let line = self.drawConnectorBetween(vector: self.atoms[from].position, vector2: self.atoms[Int(elem)!].position)
                         self.rootNode.addChildNode(line)
                     }
                     
@@ -95,17 +96,39 @@ class PrimitivesScene: SCNScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func lineBetweenNodeA(_ nodeA: SCNNode, nodeB: SCNNode) -> SCNNode {
-        let positions: [Float32] = [nodeA.position.x, nodeA.position.y, nodeA.position.z, nodeB.position.x, nodeB.position.y, nodeB.position.z]
-        let positionData = Data(bytes: UnsafePointer(positions), count: MemoryLayout<Float32>.size*positions.count)
-        let indices: [Int32] = [0, 1]
-        let indexData = Data(bytes: UnsafePointer(indices), count: MemoryLayout<Int32>.size * indices.count)
+//    func lineBetweenNodeA(_ nodeA: SCNNode, nodeB: SCNNode) -> SCNNode {
+//        let positions: [Float32] = [nodeA.position.x, nodeA.position.y, nodeA.position.z, nodeB.position.x, nodeB.position.y, nodeB.position.z]
+//        let positionData = Data(bytes: UnsafePointer(positions), count: MemoryLayout<Float32>.size*positions.count)
+//        let indices: [Int32] = [0, 1]
+//        let indexData = Data(bytes: UnsafePointer(indices), count: MemoryLayout<Int32>.size * indices.count)
+//        
+//        let source = SCNGeometrySource(data: positionData, semantic: SCNGeometrySource.Semantic.vertex, vectorCount: indices.count, usesFloatComponents: true, componentsPerVector: 3, bytesPerComponent: MemoryLayout<Float32>.size, dataOffset: 0, dataStride: MemoryLayout<Float32>.size * 3)
+//        let element = SCNGeometryElement(data: indexData, primitiveType: SCNGeometryPrimitiveType.line, primitiveCount: indices.count, bytesPerIndex: MemoryLayout<Int32>.size)
+//        
+//        let line = SCNGeometry(sources: [source], elements: [element])
+//        line.firstMaterial?.diffuse.contents = UIColor.black
+//        return SCNNode(geometry: line)
+//    }
+    
+    func drawConnectorBetween(vector vector1: SCNVector3, vector2: SCNVector3) -> SCNNode {
         
-        let source = SCNGeometrySource(data: positionData, semantic: SCNGeometrySource.Semantic.vertex, vectorCount: indices.count, usesFloatComponents: true, componentsPerVector: 3, bytesPerComponent: MemoryLayout<Float32>.size, dataOffset: 0, dataStride: MemoryLayout<Float32>.size * 3)
-        let element = SCNGeometryElement(data: indexData, primitiveType: SCNGeometryPrimitiveType.line, primitiveCount: indices.count, bytesPerIndex: MemoryLayout<Int32>.size)
+        
+        //let tmp = SCNCylinder(radius: 1.0, height: 5.0)
+        //tmp.radialSegmentCount = 10
+        //tmp.heightSegmentCount = 6
+        
+        let indices: [Int32] = [0, 1]
+        
+        let source = SCNGeometrySource(vertices: [vector1, vector2], count: 2)
+        let element = SCNGeometryElement(indices: indices, primitiveType: SCNGeometryPrimitiveType.line)
         
         let line = SCNGeometry(sources: [source], elements: [element])
         line.firstMaterial?.diffuse.contents = UIColor.black
+        
+        //let tmpNode = SCNNode(geometry: tmp)
+        //tmpNode.position = vector1
+        //tmpNode.rotation = SCNVector4(vector2.x, vector2.y, vector2.z, 45.0)
+        
         return SCNNode(geometry: line)
     }
     

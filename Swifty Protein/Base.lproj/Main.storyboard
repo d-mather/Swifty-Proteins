@@ -145,7 +145,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptf-2C-6XU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptf-2C-6XU">
                                                     <rect key="frame" x="8" y="0.0" width="327" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -162,7 +162,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.10588235294117647" green="0.11764705882352941" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="JGe-ta-YAz" kind="show" identifier="segue" id="h05-Pi-raP"/>
+                                            <outlet property="myLabel" destination="ptf-2C-6XU" id="xbz-g7-kzX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -193,11 +193,12 @@
                     <connections>
                         <outlet property="Table" destination="cuD-4f-gxQ" id="sXm-jU-lUt"/>
                         <outlet property="searchBar" destination="UWe-l6-tNq" id="reB-2G-ooC"/>
+                        <segue destination="JGe-ta-YAz" kind="show" identifier="segue" id="6Mc-0P-5uy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKM-xt-RkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="413.60000000000002" y="158.77061469265368"/>
+            <point key="canvasLocation" x="458" y="159"/>
         </scene>
         <!--Title-->
         <scene sceneID="ljS-t3-I4a">

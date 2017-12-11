@@ -25,16 +25,16 @@ class ProteinsListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProteinsTableViewCell
         if isSearching {
-            cell.textLabel?.text = self.filteredData[indexPath.row]
+            cell.myLabel?.text = self.filteredData[indexPath.row]
         } else {
-            cell.textLabel?.text = self.proteinsList[indexPath.row]
+            cell.myLabel?.text = self.proteinsList[indexPath.row]
         }
 
-        cell.textLabel?.textAlignment = .center
+        cell.myLabel?.textAlignment = .center
         cell.backgroundColor = UIColor.clear
-        cell.textLabel?.textColor = UIColor.init(red: 66.0/255.0, green: 200.0/255.0, blue: 244.0/255.0, alpha: 1.0)
+        cell.myLabel?.textColor = UIColor.init(red: 66.0/255.0, green: 200.0/255.0, blue: 244.0/255.0, alpha: 1.0)
         cell.separatorInset = UIEdgeInsets.zero
         cell.layoutMargins = UIEdgeInsets.zero
         let bgColorView = UIView()
@@ -45,9 +45,9 @@ class ProteinsListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPath = tableView.indexPathForSelectedRow
-        let currentCell = tableView.cellForRow(at: indexPath!)! as UITableViewCell
-        myIndex = proteinsList.index(of: currentCell.textLabel!.text!)!
+        let myIndexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRow(at: myIndexPath!)! as! ProteinsTableViewCell
+        myIndex = proteinsList.index(of: currentCell.myLabel!.text!)!
         performSegue(withIdentifier: "segue", sender: self)
     }
 

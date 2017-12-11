@@ -106,7 +106,8 @@ class DisplayProtein: UIViewController {
     }
     
     func didTap(_ tapGR: UITapGestureRecognizer) {
-        let tapPoint = tapGR.location(in: view)
+        let v = self.proteinView as! SCNView
+        let tapPoint = tapGR.location(in: v)
         let hits = self.scnView!.hitTest(tapPoint, options: nil)
         
         if let tappedNode = hits.first?.node {
